@@ -84,15 +84,14 @@ def main():
     fValid.close()
 
     '''
-    There is no static list of answers for Wordle, so there will no longer be
-    a list of answers. The program will find the best possible answer based on 
-    all valid words.
+    There is no static list of answers for Wordle, but this list is a collection
+    of frequent/past answers that the wordle will most likely be.
     '''
-    # with open("wordle-answers.txt", "r") as fAnswers:
-    #     allAnswers = [line.strip('\n') for line in fAnswers.readlines()]
-    # fAnswers.close()
+    with open("wordle-answers.txt", "r") as fAnswers:
+        allAnswers = [line.strip('\n') for line in fAnswers.readlines()]
+    fAnswers.close()
 
-    possibleAnswers = allValidWords.copy()
+    possibleAnswers = allAnswers.copy()
 
     numGuesses = 0
     while numGuesses < WORDLE_GUESSES:
