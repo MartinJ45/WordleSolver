@@ -1,7 +1,6 @@
 '''
 author: @MartinJ45
 '''
-
 from fnmatch import fnmatch
 from random import randrange
 
