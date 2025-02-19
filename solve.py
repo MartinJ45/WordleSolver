@@ -116,7 +116,7 @@ def main():
                     bestGuess = getBestGuess(possibleAnswers, guess)
                     if bestGuess == "":
                         bestGuess = possibleAnswers[randrange(len(possibleAnswers))]
-                    print(f"({len(possibleAnswers)} possible answers) You should guess:", bestGuess)
+                    print(f"You should guess:", bestGuess)
 
                     invalidInput = False
 
