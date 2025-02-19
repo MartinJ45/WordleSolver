@@ -1,3 +1,7 @@
+'''
+author: @MartinJ45
+'''
+
 from fnmatch import fnmatch
 from random import randrange
 
@@ -79,11 +83,16 @@ def main():
         allValidWords = [line.strip('\n') for line in fValid.readlines()]
     fValid.close()
 
-    with open("wordle-answers.txt", "r") as fAnswers:
-        allAnswers = [line.strip('\n') for line in fAnswers.readlines()]
-    fAnswers.close()
+    '''
+    There is no static list of answers for Wordle, so there will no longer be
+    a list of answers. The program will find the best possible answer based on 
+    all valid words.
+    '''
+    # with open("wordle-answers.txt", "r") as fAnswers:
+    #     allAnswers = [line.strip('\n') for line in fAnswers.readlines()]
+    # fAnswers.close()
 
-    possibleAnswers = allAnswers.copy()
+    possibleAnswers = allValidWords.copy()
 
     numGuesses = 0
     while numGuesses < WORDLE_GUESSES:
